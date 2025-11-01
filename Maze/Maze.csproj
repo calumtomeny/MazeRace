@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <!-- Keep existing AssemblyInfo.cs attributes -->
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <!-- Exclude legacy duplicate types that were not part of the original .NET Framework project build -->
+  <ItemGroup>
+    <Compile Remove="Game/Models/PlayerCell.cs" />
+    <Compile Remove="Maze/Models/Movement.cs" />
+    <Compile Remove="Maze/Models/MovementDirection.cs" />
+    <Compile Remove="Maze/Models/MovementType.cs" />
+    <Compile Remove="Maze/Models/AutoSolveResult.cs" />
+    <Compile Remove="Maze/Models/HumanSolveResult.cs" />
+  </ItemGroup>
+</Project>
